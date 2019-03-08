@@ -7,7 +7,7 @@ requirements = [r for r in open(requirements_file).read().split('\n') if not re.
 
 setuptools.setup(
     name='pubmedextract',
-    version='0.0.2',
+    version='0.0.1',
     url='https://github.com/allenai/scholar-research/tree/master/experiments/pubmedextract',
     packages=setuptools.find_packages(),
     install_requires=requirements  # dependencies specified in requirements.in
