@@ -3,10 +3,9 @@ import json
 
 from typing import Iterable, List, Dict
 
-from corvid.table.table import Cell, Table
-from corvid.table.table_loader import CellLoader, TableLoader
-from corvid.util.strings import format_grid
-from corvid.util.geom import Box
+from pubmedextract.corvid.table import Cell, Table, format_grid
+from pubmedextract.corvid.table import CellLoader, TableLoader
+from pubmedextract.corvid.geom import Box
 
 
 class OmnipageTableLoaderException(Exception):

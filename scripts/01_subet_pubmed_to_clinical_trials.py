@@ -83,6 +83,7 @@ def get_links_from_file(file_name):
             paperinfos.append(paperinfo)
     return paperinfos
 
+
 list_of_results = Parallel(n_jobs=N_JOBS, verbose=25)(delayed(process_file)(file) for file in files)
 
 # some may have errored out - we catch those here and redo
@@ -102,8 +103,13 @@ for result, file_name in list_of_results:
     if type(result) is list:
         results.extend(result)
 
+print('Found a total of %d records' % len(results))
+
 # we now filter down to only those that are trials of some kind
 trial_results = [i for i in results if len(set(i['pubtypelist']).intersection(valid_pubtypes)) > 0]
+
+
+print('Found a total of %d clinical trial records' % len(trial_results))
 
 '''
 Note: at this point we use internal S2 processes to subset trial_results to only include papers

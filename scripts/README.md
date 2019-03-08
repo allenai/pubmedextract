@@ -1,6 +1,6 @@
-# Code and Data for 'Quantifying Sex Bias at Scale with Semantic Scholar'
+# Code and Data for 'Quantifying Sex Bias in Clinical Studies at Scale with Automated Data Extraction'
 This collection of scripts and data enables the reproduction of results, tables, and figures from the paper
-'Quantifying Sex Bias at Scale with Semantic Scholar'. 
+'Quantifying Sex Bias in Clinical Studies at Scale with Automated Data Extraction'. 
 
 ## Scripts
 The script files are as follows:
@@ -8,9 +8,12 @@ The script files are as follows:
 * `01_subet_pubmed_to_clinical_trials.py` - This file provides code that was used to subset the entire 
 PubMed archive to records that are related to clinical trials. Note that the records were then further
 subsetted to those for which Semantic Scholar had full PDFs, but the code for this process is not included.
+To run this file, you will need to download the entire PubMed XML corpus (ftp://ftp.ncbi.nlm.nih.gov/pubmed/baseline).
+See comments within the script for more information.
 * `02_data_setup.py` - This file contains code to pre-process MeSH data, and obtain mappings from PubMed
 records to disease-related MeSH terms.
-* `03_apply_pubmedextract.py` - Code for the application of PubMedExtract algorithm.
+* `03_apply_pubmedextract.py` - Code for the application of PubMedExtract algorithm. This takes a very long time. 
+If you wish to skip this, the results are already included in `data/pubmedextract_results.pickle`.
 * `04_analysis.py` - Code to generate statistical analysis, tables, and figures.
 
 Once the parent package `pubmedextract` is installed via `python setup.py pubmedextract` and the data 
@@ -20,12 +23,12 @@ needed is downloaded (see below), scripts 02, 03, and 04 should be executed in o
 
 The files required for the above scripts are available in the following public S3 bucket: `s3://ai2-pubmedextract`.
 
-The files should be downloaded into this folder: `pubmedextract/scripts/data` via the AWS CLI: 
+The 3.2GB of files should be downloaded into this folder: `pubmedxtract/scripts/data` via the AWS CLI: 
 
-`aws s3 sync s3://ai2-pubmedextract/ pubmedextract/scripts/data`
+`aws s3 sync s3://ai2-pubmedextract/ pubmedxtract/scripts/data`
 
-After which, unarchive the file `papers_json.gz.tar` into the same folder. 
-It should create a new folder: `pubmedextract/scripts/data/papers_json`
+If you intend to rerun `pubmedxtract/scripts/03_apply_pubmedextract.py`, then unarchive the file `papers_json.gz.tar` into the same folder. 
+It should create a new folder: `pubmedextract/scripts/data/papers_json`. Both the unarchiving and script take many hours.
 
 The files/folders are as follows:
 

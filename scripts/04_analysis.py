@@ -66,6 +66,7 @@ with open('data/aact_query_jan_7_2019.pickle', 'rb') as f:
     sex, diseases = pickle.load(f)
 
 """
+# if you prefer to get more recent data, use the code below instead
 # you will first need to create an account here: https://aact.ctti-clinicaltrials.org/users/sign_up
 # then update user and password fields
 params = {
@@ -110,10 +111,6 @@ sex = sex.pivot(index='nct_id', columns='cat', values='total_participants')
 sex.dropna(axis=0, how='any', inplace=True)
 """
 
-'''
-with open('data/aact_query_jan_7_2019.pickle', 'wb') as f:
-    pickle.dump((sex, diseases), f)
-'''
 
 # get male/female counts for each nct_id
 nct_id_to_counts = {}
@@ -521,7 +518,7 @@ plt.xticks(fontsize=50)
 plt.yticks(fontsize=50)
 
 plt.tight_layout()
-plt.savefig('data/trial_n_vs_bias.jpg', dpi=60, quality=100)
+plt.savefig('data/trial_n_vs_bias.png', dpi=60, quality=100)
 
 
 '''

@@ -23,7 +23,8 @@ with open('data/mtrees2018.bin', 'r') as f:
         term2mesh[term].append(meshid)
         mesh2term[meshid] = term
 
-# for each term, figure out of its parent has the word 'disease' or 'vaccination'
+# for each term, figure out of its parent has relevant key words:
+# disease, vaccination, disorder, pathological or neoplasms
 disease_match = {}
 for term, meshids in term2mesh.items():
     meshids_cum = [[meshid[:i] for i in range(1, len(meshid) + 1)]
@@ -44,11 +45,10 @@ counter = Counter()
 pmid_to_mesh = {}
 has_disease_count = 0
 for pmid, trial_result in pubmed_s2_data.items():
-    meshlist = trial_result['meshlist']
-    if meshlist is not None:
+    if trial_result['meshlist'] is not None:
         # find disease mesh terms first
         disease_mesh = np.array(
-            [i for i in meshlist
+            [i for i in trial_result['meshlist']
              if i[0] in disease_match
              and disease_match[i[0]]]
         )
