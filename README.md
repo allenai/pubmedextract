@@ -1,42 +1,17 @@
 # PubMedExtract
 
-TODO: update this file after making a public repo.
-
 Quantifying demographic bias in clinical trials using corpus of academic papers.
 
 This code takes as input a clinical trial paper parsed by Omnipage and returns the extracted number
-of participating women and men. The algorithm will often return `nan` counts, 
-indicating that it failed to get a confident estimate.
+of participating women and men.
 
-## Generating the Input
-The inputs to the algorithm are generated as follows.
-
-First, write the list of S2 paper IDs in a text file `ids.txt` (one paper ID per line) to fetch them from S3:
-```
-cd scholar-research/corvid/
-python scripts/bulk_fetch_pdfs_from_s3.py -p ids.txt
-```
-
-The PDFs will be downloaded to a local location that can be viewed in the `configs.py` file at the root of `scholar-research/corvid/`, currently set as follows:
-```
-import os
-from corvid.util.files import canonicalize_path
-
-DATA_DIR = canonicalize_path('/net/nfs.corp/s2-research/corvid/')
-PAPERS_DIR = os.path.join(DATA_DIR, 'papers/')
-```
-
-According to this configuration, the PDFs would be saved to `/net/nfs.corp/s2-research/corvid/papers/<paper_id>/<paper_id>.pdf`
-
-Subsequently, extract the tables from each PDF as follows:
-```
-python scripts/bulk_extract_tables_from_pdfs_via_omnipage.py -p ids.txt
-```
-This will look for the PDF in the location specified in the config, pass it to Omnipage to get XML, extract tables and serialize them to JSON.  The XML and JSON are saved in the same location as the PDF.
+This package is being released for (a) algorithmic documentation and (b) statistical analysis reproduction purposes,
+and will not work for extracting clinical trial participant counts from new PDFs you may have as it depends on
+Omnipage. For an example of the type of input that PubMed-Extract expectsh, see `tests\test_sex\papers\`
 
 
-## Extracting Gender Counts from the Input
-A simple example is in the `scripts` folder, and also reproduced in its entirety below:
+## Extracting Gender Counts from Available JSON Inputs
+A simple example is in `scripts/parse_paper_example.py`, and also reproduced in its entirety below:
 
 ```
 import pickle
@@ -44,7 +19,7 @@ from pubmedextract.sex import get_sex_counts
 from pubmedextract.table_utils import PaperTable
 
 # load some example papers
-# assumes the cwd is scholar_research/experiments/pubmedextract
+# assumes the cwd is pubmedextract/
 with open('tests/test_sex/test_papers_and_counts.pickle', 'rb') as f:
     s2ids_and_true_counts, _ = pickle.load(f)
 
@@ -59,15 +34,17 @@ for s2id, true_counts in s2ids_and_true_counts:
 
 ## Installation
 
-This project requires **Python 3.6** or greater.  
+This project requires **Python 3.6**.  We recommend you set up a conda environment:
+ 
+```
+conda create -n pubmedextract python=3.6
+source activate pubmedextract
+```
 
-To install this project, first follow the installation instructions in `https://github.com/allenai/scholar-research/tree/master/corvid`,
-and then the following (when `pubmedextract` is the current working directory):
+The dependencies are listed in the `requirements.in` file:
 
 ```
-source activate s2-corvid
 pip install -r requirements.in
-python setup.py install
 ```
 
 
