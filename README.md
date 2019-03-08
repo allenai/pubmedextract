@@ -12,6 +12,8 @@ This package is being released for (a) algorithmic documentation and (b) statist
 and will not work for extracting clinical trial participant counts from new PDFs you may have as it depends on
 Omnipage. For an example of the type of input that PubMed-Extract expects, see `tests\test_sex\papers\`.
 
+The code for (a) is located in `pubmedextract\` The code for (b) is located in `analysis_scripts\`.
+
 
 ## Installation
 
