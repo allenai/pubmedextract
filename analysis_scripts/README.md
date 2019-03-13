@@ -25,7 +25,7 @@ The files required for the above scripts are available in the following public S
 
 The 3.2GB of files should be downloaded into this folder: `analysis_scripts/data` via the AWS CLI: 
 
-`aws s3 sync s3://ai2-pubmedextract/ analysis_scripts/data`
+`aws s3 sync --no-sign-request s3://ai2-pubmedextract/ analysis_scripts/data`
 
 If you intend to rerun `analysis_scripts/03_apply_pubmedextract.py`, then unarchive the file `papers_json.gz.tar` into the same folder. 
 It should create a new folder: `analysis_scripts/data/papers_json`. Both the unarchiving and script take many hours.
