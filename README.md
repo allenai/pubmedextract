@@ -10,9 +10,9 @@ of participating women and men.
 
 This package is being released for (a) algorithmic documentation and (b) statistical analysis reproduction purposes,
 and will not work for extracting clinical trial participant counts from new PDFs you may have as it depends on
-Omnipage. For an example of the type of input that PubMed-Extract expects, see `tests\test_sex\papers\`.
+Omnipage. For an example of the type of input that PubMed-Extract expects, see `tests/test_sex/papers/`.
 
-The code for (a) is located in `pubmedextract\` The code for (b) is located in `analysis_scripts\`.
+The code for (a) is located in `pubmedextract/` The code for (b) is located in `analysis_scripts/`.
 
 
 ## Installation
@@ -24,7 +24,7 @@ conda create -n pubmedextract python=3.6
 conda activate pubmedextract
 ```
 
-The dependencies are listed in the `requirements.in` file:
+Then clone the repo, and install it (along with the requirements).
 
 ```
 git clone https://github.com/allenai/pubmedextract.git
