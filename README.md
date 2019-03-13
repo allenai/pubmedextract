@@ -27,6 +27,8 @@ conda activate pubmedextract
 The dependencies are listed in the `requirements.in` file:
 
 ```
+git clone https://github.com/allenai/pubmedextract.git
+cd pubmedextract
 pip install -r requirements.in
 ```
 
