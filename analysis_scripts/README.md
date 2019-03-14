@@ -28,13 +28,13 @@ The 3.2GB of files should be downloaded into this folder: `analysis_scripts/data
 
 `aws s3 sync --no-sign-request s3://ai2-pubmedextract/ analysis_scripts/data`
 
-If you intend to rerun `analysis_scripts/03_apply_pubmedextract.py`, then unarchive the file `papers_json.gz.tar` into the same folder. 
+If you intend to rerun `analysis_scripts/03_apply_pubmedextract.py`, then unarchive the file `papers_json.tar.gz` into the same folder. 
 It should create a new folder: `analysis_scripts/data/papers_json`. Both the unarchiving and script take many hours.
 
 The files/folders are as follows:
 
 * `aact_query_jan_7_2019.pickle` - The results of the commented out AACT query in `04_analysis.py`. This was run at the end of 2018 and is included for reproducibility.  
-* `papers_json.gz.tar` - An archive containing the folder with a large number of paper table files (in json format) that are required for reproduction. 
+* `papers_json.tar.gz` - An archive containing the folder with a large number of paper table files (in json format) that are required for reproduction. 
 The contents are necessary for `03_apply_pubmedextract.py`.
 * `disease_category_prevalence_global.tsv` - 2016 global disease prevalence data obtained via the [GHDx](http://ghdx.healthdata.org/gbd-results-tool).
 * `mesh2category_global.tsv` - MeSH to disease category mapping.
