@@ -22,6 +22,7 @@ This project requires **Python 3.6**.  We recommend you set up a conda environme
 ```
 conda create -n pubmedextract python=3.6
 conda activate pubmedextract
+conda install spacy=1.9 thinc=6.5.2 matplotlib=3.0.1 seaborn=0.9.0 joblib=0.12.0 psycopg2=2.7.5 pandas=0.23.4 statsmodels=0.9.0 patsy pytest pylint
 ```
 You may need to do `source activate pubmedextract` instead of `conda activate pubmedxtract`, depending on your `anaconda` version.
 
