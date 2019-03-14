@@ -2,6 +2,9 @@
 This collection of scripts and data enables the reproduction of results, tables, and figures from the paper
 'Quantifying Sex Bias in Clinical Studies at Scale with Automated Data Extraction'. 
 
+To get started, make sure you've installed the parent package `pubmedextract` via `python setup.py install` and the data 
+needed is downloaded (see `Data` section below). Then, you can run scripts 02, 03, and 04 (in order) while the current working directory is `pubmedextract/analysis_scripts`. Note that script 01 is included primarily as documentation and can be skipped over.
+
 ## Scripts
 The script files are as follows:
 
@@ -16,8 +19,6 @@ records to disease-related MeSH terms.
 If you wish to skip this, the results are already included in `data/pubmedextract_results.pickle`.
 * `04_analysis.py` - Code to generate statistical analysis, tables, and figures.
 
-Once the parent package `pubmedextract` is installed via `python setup.py pubmedextract` and the data 
-needed is downloaded (see below), scripts 02, 03, and 04 should be executed in order while the current working directory is `pubmedextract/scripts`
 
 ## Data
 
