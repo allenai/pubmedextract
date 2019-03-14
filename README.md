@@ -23,6 +23,8 @@ This project requires **Python 3.6**.  We recommend you set up a conda environme
 conda create -n pubmedextract python=3.6
 conda activate pubmedextract
 ```
+You may need to do `source activate pubmedextract` instead of `conda activate pubmedxtract`, depending on your `anaconda` version.
+
 
 Then clone the repo, and install it (along with the requirements).
 
