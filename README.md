@@ -73,3 +73,5 @@ The scripts needs to reproduce the analyses in the paper `Quantifying Sex Bias i
 
 ## Troubleshooting
 If you're having trouble installing due to `spacy` errors, modify the `requirements.in` file and uncomment the line that starts with `thinc==6.5.2`.
+
+If you're having trouble with `matplotlib` installing when running any of the analysis scripts, try `conda install matplotlib` instead.
