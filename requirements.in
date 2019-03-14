@@ -1,6 +1,6 @@
 # base requirements
 spacy==1.8.2
-thinc==6.5.2 # for spacy
+#thinc==6.5.2 # if you're having issues with spacy, then uncomment this
 awscli==1.16.52 # to download data
 
 # analysis scripts requirements
