@@ -39,7 +39,7 @@ After installing, you can run all the unit tests:
 
 ```
 pylint --disable=R,C,W pubmedextract
-pytest tests/
+python -m pytest tests/
 ```
 
 
