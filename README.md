@@ -27,7 +27,7 @@ conda install spacy=1.9 thinc=6.5.2 matplotlib=3.0.1 seaborn=0.9.0 joblib=0.12.0
 You may need to do `source activate pubmedextract` instead of `conda activate pubmedxtract`, depending on your `anaconda` version.
 
 
-Then clone the repo, and install it (along with the requirements).
+Then clone the repo, and install it (along with remaining requirements).
 
 ```
 git clone https://github.com/allenai/pubmedextract.git
@@ -70,9 +70,3 @@ for s2id, true_counts in s2ids_and_true_counts:
 
 ## Paper Analysis Reproduction
 The scripts needs to reproduce the analyses in the paper `Quantifying Sex Bias in Clinical Studies at Scale with Automated Data Extraction` can be found here: https://github.com/allenai/pubmedextract/tree/master/analysis_scripts.
-
-
-## Troubleshooting
-If you're having trouble installing due to `spacy` errors, modify the `requirements.in` file and uncomment the line that starts with `thinc==6.5.2`.
-
-If you're having trouble with `matplotlib` installing when running any of the analysis scripts, try `conda install matplotlib` instead.
