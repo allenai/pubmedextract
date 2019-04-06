@@ -1,4 +1,4 @@
-# PubMedExtract
+# PubMed-Extract
 
 Quantifying demographic bias in clinical trials using corpus of academic papers. 
 
@@ -13,6 +13,9 @@ and will not work for extracting clinical trial participant counts from new PDFs
 Omnipage. For an example of the type of input that PubMed-Extract expects, see `tests/test_sex/papers/`.
 
 The code for (a) is located in `pubmedextract/` The code for (b) is located in `analysis_scripts/`.
+
+Note that the paper compares PubMed-Extract to an algorithm referred to as AACT-Query.
+This is a relatively simple algorithm and its execution (essentially a SQL query) is contained entirely within `analysis_scripts/04_analysis.py`.
 
 
 ## Installation
