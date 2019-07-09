@@ -2,7 +2,7 @@
 
 Quantifying demographic bias in clinical trials using corpus of academic papers. 
 
-This repo accompanies the paper: Quantifying Sex Bias in Clinical Studies at Scale with Automated Data Extraction by
+This repo accompanies the paper: [Quantifying Sex Bias in Clinical Studies at Scale with Automated Data Extraction](https://www.ncbi.nlm.nih.gov/pubmed/31268541) by
 Sergey Feldman, Waleed Ammar, Kyle Lo, Elly Trepman, Madeleine van Zuylen, and Oren Etzioni.
 
 This code takes as input a clinical trial paper parsed by Omnipage and returns the extracted number
