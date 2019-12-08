@@ -72,4 +72,4 @@ for s2id, true_counts in s2ids_and_true_counts:
 
 
 ## Paper Analysis Reproduction
-The scripts needs to reproduce the analyses in the paper `Quantifying Sex Bias in Clinical Studies at Scale with Automated Data Extraction` can be found here: https://github.com/allenai/pubmedextract/tree/master/analysis_scripts.
+The scripts needed to reproduce the analyses in the paper `Quantifying Sex Bias in Clinical Studies at Scale with Automated Data Extraction` can be found here: https://github.com/allenai/pubmedextract/tree/master/analysis_scripts.
